@@ -20,19 +20,15 @@ class Game {
 	}
 	// The function below removes a life, removes a heart from the board, and, if the player is out of lives, ends the game.
 	removeLife () {
-		if (this.missed===4) {
-			this.missed++;
+		if (this.missed === 4) {
+			this.missed += 1;
 			this.gameOver();
-		} else if (this.missed===5) {
-
 		} else {
 			this.missed += 1;
 			let tries = document.querySelectorAll('.tries');
 			for(let i = 0; i < tries.length; i++){
-				if (tries[i].style.display === 'none') {
-				
-				} else {
-					tries[i].style.display='none'
+				if (tries[i].style.display !== 'none') {
+					tries[i].style.display='none';
 					break;
 				}
 			}
